@@ -22015,10 +22015,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\video-repeater.csproj",
+      "projectUniqueName": "C:\\Users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\video-repeater.csproj",
       "projectName": "video-repeater",
-      "projectPath": "c:\\users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\video-repeater.csproj",
-      "outputPath": "c:\\users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\obj\\",
+      "projectPath": "C:\\Users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\video-repeater.csproj",
+      "outputPath": "C:\\Users\\tacin\\documents\\visual studio 2017\\Projects\\video-repeater\\video-repeater\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "uap10.0.10586"

@@ -35,53 +35,41 @@
                                 FontSize="36"
                                 Click="HamburgerBtn_Click"/>
                     </ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="Play" Click="PlayBtn_Click" 
-                                    FontSize="26"/>
-                        <Button Content="Stop" Click="PlayBtn_Click" 
-                                    FontSize="26"
-                                Margin="20,0,0,0"/>
-                    </StackPanel>
+                    
 
                     <ListBoxItem Name="ListBoxItem1">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"  
-                                   Text="&#xE703;" 
-                                   FontSize="36"/>
+                        <RelativePanel>
+                            <TextBlock Name="mediaLibrary"
+                                       FontFamily="Segoe MDL2 Assets"  
+                                       Text="&#xE703;" 
+                                       FontSize="36"/>
                             <TextBlock Margin="20, 0, 0, 0"  
-                                   Text="最近观看视频" 
-                                   FontSize="24"/>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="ListBoxItem2">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"  
-                                   Text="&#xE705;" 
-                                   FontSize="36"/>
-                            <TextBlock Margin="20, 0, 0, 0" 
-                                   Text="最近打开目录" 
-                                   FontSize="24"/>
-                        </StackPanel>
+                                       Text="媒体库" 
+                                       FontSize="16"
+                                       RelativePanel.RightOf="mediaLibrary"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                        </RelativePanel>
                     </ListBoxItem>
                     <ListBoxItem >
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets"  
-                                   Text="&#xE707;" 
-                                   FontSize="36"/>
+                        <RelativePanel>
+                            <TextBlock Name="recordInfo"
+                                       FontFamily="Segoe MDL2 Assets"  
+                                       Text="&#xE707;" 
+                                       FontSize="36"/>
                             <TextBlock Margin="20, 0, 0, 0"
-                                   Text="记录信息" 
-                                   FontSize="24"/>
-                        </StackPanel>
+                                       Text="记录信息" 
+                                       FontSize="16"
+                                       RelativePanel.RightOf="recordInfo"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                        </RelativePanel>
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>
-                <MediaElement Grid.Row="1"
-                              Name="myMediaElement">   
-                    <MediaElement.TransportControls>
-                        <local:CustomMediaTransportControls />
-                    </MediaElement.TransportControls>
-                </MediaElement>
+                <Frame Name="mainPageFrame">
+                    
+                </Frame>
+                
             </SplitView.Content>
         </SplitView>
         

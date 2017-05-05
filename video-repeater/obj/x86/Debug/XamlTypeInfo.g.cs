@@ -132,19 +132,23 @@ namespace video_repeater.video_repeater_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
-            _typeNameTable[0] = "video_repeater.CustomMediaTransportControls";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.MediaTransportControls";
-            _typeNameTable[2] = "video_repeater.MainPage";
-            _typeNameTable[3] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[7];
+            _typeNameTable[0] = "video_repeater.MainPage";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "video_repeater.MediaPage";
+            _typeNameTable[4] = "video_repeater.CustomMediaTransportControls";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.MediaTransportControls";
+            _typeNameTable[6] = "video_repeater.PlayerPage";
 
-            _typeTable = new global::System.Type[5];
-            _typeTable[0] = typeof(global::video_repeater.CustomMediaTransportControls);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.MediaTransportControls);
-            _typeTable[2] = typeof(global::video_repeater.MainPage);
-            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[7];
+            _typeTable[0] = typeof(global::video_repeater.MainPage);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::video_repeater.MediaPage);
+            _typeTable[4] = typeof(global::video_repeater.CustomMediaTransportControls);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.MediaTransportControls);
+            _typeTable[6] = typeof(global::video_repeater.PlayerPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -179,8 +183,10 @@ namespace video_repeater.video_repeater_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_CustomMediaTransportControls() { return new global::video_repeater.CustomMediaTransportControls(); }
-        private object Activate_2_MainPage() { return new global::video_repeater.MainPage(); }
+        private object Activate_0_MainPage() { return new global::video_repeater.MainPage(); }
+        private object Activate_3_MediaPage() { return new global::video_repeater.MediaPage(); }
+        private object Activate_4_CustomMediaTransportControls() { return new global::video_repeater.CustomMediaTransportControls(); }
+        private object Activate_6_PlayerPage() { return new global::video_repeater.PlayerPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -192,30 +198,44 @@ namespace video_repeater.video_repeater_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  video_repeater.CustomMediaTransportControls
-                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.MediaTransportControls"));
-                userType.Activator = Activate_0_CustomMediaTransportControls;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 1:   //  Windows.UI.Xaml.Controls.MediaTransportControls
-                xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 2:   //  video_repeater.MainPage
+            case 0:   //  video_repeater.MainPage
                 userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_2_MainPage;
+                userType.Activator = Activate_0_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 3:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  video_repeater.MediaPage
+                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_MediaPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  video_repeater.CustomMediaTransportControls
+                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.MediaTransportControls"));
+                userType.Activator = Activate_4_CustomMediaTransportControls;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Windows.UI.Xaml.Controls.MediaTransportControls
+                xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  video_repeater.PlayerPage
+                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_PlayerPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
