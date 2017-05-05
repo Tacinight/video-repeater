@@ -8,6 +8,83 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            
+        </StackPanel>
 
+        <SplitView Name="mySplitView" 
+                   DisplayMode="CompactInline" 
+                   Grid.Row="1" 
+                   OpenPaneLength="240" 
+                   CompactPaneLength="56" 
+                   HorizontalAlignment="Left"
+                   IsPaneOpen="True">
+            <SplitView.Pane>
+                <ListBox Name="IconListBox" 
+                     SelectionMode="Single"
+                     SelectionChanged="IconListBox_SelectionChanged">
+                    <ListBoxItem Name="ListBoxItem"
+                                 Padding="0">
+                        <Button Name="HamburgerBtn" 
+                                FontFamily="Segoe MDL2 Assets"  
+                                Content="&#xE700;" 
+                                FontSize="36"
+                                Click="HamburgerBtn_Click"/>
+                    </ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Play" Click="PlayBtn_Click" 
+                                    FontSize="26"/>
+                        <Button Content="Stop" Click="PlayBtn_Click" 
+                                    FontSize="26"
+                                Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <ListBoxItem Name="ListBoxItem1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets"  
+                                   Text="&#xE703;" 
+                                   FontSize="36"/>
+                            <TextBlock Margin="20, 0, 0, 0"  
+                                   Text="最近观看视频" 
+                                   FontSize="24"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ListBoxItem2">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets"  
+                                   Text="&#xE705;" 
+                                   FontSize="36"/>
+                            <TextBlock Margin="20, 0, 0, 0" 
+                                   Text="最近打开目录" 
+                                   FontSize="24"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets"  
+                                   Text="&#xE707;" 
+                                   FontSize="36"/>
+                            <TextBlock Margin="20, 0, 0, 0"
+                                   Text="记录信息" 
+                                   FontSize="24"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <MediaElement Grid.Row="1"
+                              Name="myMediaElement">   
+                    <MediaElement.TransportControls>
+                        <local:CustomMediaTransportControls />
+                    </MediaElement.TransportControls>
+                </MediaElement>
+            </SplitView.Content>
+        </SplitView>
+        
+        
     </Grid>
 </Page>
