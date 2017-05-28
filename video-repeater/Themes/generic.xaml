@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:video_repeater">
+    xmlns:local="using:VideoRepeater">
 
     <Style TargetType="local:CustomMediaTransportControls">
         <Setter Property="IsTabStop" Value="False" />

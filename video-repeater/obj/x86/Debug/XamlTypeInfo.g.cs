@@ -9,11 +9,11 @@
 
 
 
-namespace video_repeater
+namespace VideoRepeater
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-    private global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
+    private global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
 
         /// <summary>
         /// GetXamlType(Type)
@@ -22,7 +22,7 @@ namespace video_repeater
         {
             if(_provider == null)
             {
-                _provider = new global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByType(type);
         }
@@ -34,7 +34,7 @@ namespace video_repeater
         {
             if(_provider == null)
             {
-                _provider = new global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByName(fullName);
         }
@@ -49,7 +49,7 @@ namespace video_repeater
     }
 }
 
-namespace video_repeater.video_repeater_XamlTypeInfo
+namespace VideoRepeater.video_repeater_XamlTypeInfo
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -133,22 +133,22 @@ namespace video_repeater.video_repeater_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[7];
-            _typeNameTable[0] = "video_repeater.MainPage";
+            _typeNameTable[0] = "VideoRepeater.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "video_repeater.MediaPage";
-            _typeNameTable[4] = "video_repeater.CustomMediaTransportControls";
+            _typeNameTable[3] = "VideoRepeater.MediaPage";
+            _typeNameTable[4] = "VideoRepeater.CustomMediaTransportControls";
             _typeNameTable[5] = "Windows.UI.Xaml.Controls.MediaTransportControls";
-            _typeNameTable[6] = "video_repeater.PlayerPage";
+            _typeNameTable[6] = "VideoRepeater.PlayerPage";
 
             _typeTable = new global::System.Type[7];
-            _typeTable[0] = typeof(global::video_repeater.MainPage);
+            _typeTable[0] = typeof(global::VideoRepeater.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::video_repeater.MediaPage);
-            _typeTable[4] = typeof(global::video_repeater.CustomMediaTransportControls);
+            _typeTable[3] = typeof(global::VideoRepeater.MediaPage);
+            _typeTable[4] = typeof(global::VideoRepeater.CustomMediaTransportControls);
             _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.MediaTransportControls);
-            _typeTable[6] = typeof(global::video_repeater.PlayerPage);
+            _typeTable[6] = typeof(global::VideoRepeater.PlayerPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,56 +183,56 @@ namespace video_repeater.video_repeater_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::video_repeater.MainPage(); }
-        private object Activate_3_MediaPage() { return new global::video_repeater.MediaPage(); }
-        private object Activate_4_CustomMediaTransportControls() { return new global::video_repeater.CustomMediaTransportControls(); }
-        private object Activate_6_PlayerPage() { return new global::video_repeater.PlayerPage(); }
+        private object Activate_0_MainPage() { return new global::VideoRepeater.MainPage(); }
+        private object Activate_3_MediaPage() { return new global::VideoRepeater.MediaPage(); }
+        private object Activate_4_CustomMediaTransportControls() { return new global::VideoRepeater.CustomMediaTransportControls(); }
+        private object Activate_6_PlayerPage() { return new global::VideoRepeater.PlayerPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType userType;
+            global::VideoRepeater.video_repeater_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::VideoRepeater.video_repeater_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
             switch (typeIndex)
             {
 
-            case 0:   //  video_repeater.MainPage
-                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case 0:   //  VideoRepeater.MainPage
+                userType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  video_repeater.MediaPage
-                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case 3:   //  VideoRepeater.MediaPage
+                userType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MediaPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  video_repeater.CustomMediaTransportControls
-                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.MediaTransportControls"));
+            case 4:   //  VideoRepeater.CustomMediaTransportControls
+                userType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.MediaTransportControls"));
                 userType.Activator = Activate_4_CustomMediaTransportControls;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 5:   //  Windows.UI.Xaml.Controls.MediaTransportControls
-                xamlType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  video_repeater.PlayerPage
-                userType = new global::video_repeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case 6:   //  VideoRepeater.PlayerPage
+                userType = new global::VideoRepeater.video_repeater_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_6_PlayerPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -245,7 +245,7 @@ namespace video_repeater.video_repeater_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::video_repeater.video_repeater_XamlTypeInfo.XamlMember xamlMember = null;
+            global::VideoRepeater.video_repeater_XamlTypeInfo.XamlMember xamlMember = null;
             // No Local Properties
             return xamlMember;
         }
@@ -300,9 +300,9 @@ namespace video_repeater.video_repeater_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::video_repeater.video_repeater_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::VideoRepeater.video_repeater_XamlTypeInfo.XamlSystemBaseType
     {
-        global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -316,7 +316,7 @@ namespace video_repeater.video_repeater_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -508,7 +508,7 @@ namespace video_repeater.video_repeater_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -517,7 +517,7 @@ namespace video_repeater.video_repeater_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::video_repeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::VideoRepeater.video_repeater_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

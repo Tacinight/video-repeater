@@ -14,17 +14,23 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Storage.Pickers;
 using Windows.Storage;
-// https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
+using System.Collections.ObjectModel;
+using VideoRepeater.Model;
 
-namespace video_repeater
+namespace VideoRepeater
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
     public sealed partial class MediaPage : Page
     {
+        private ObservableCollection<MediaFile> MediaFiles;
+        
         public MediaPage()
         {
+            MediaFiles = new ObservableCollection<MediaFile>();
+            MediaFiles.Add(new MediaFile("OpenFile", null));
+            MediaFiles.Add(new MediaFile("OpenFolder", null));
             this.InitializeComponent();
         }
 
@@ -43,8 +49,63 @@ namespace video_repeater
 
             if (file != null)
             {
-                Frame.Navigate(typeof(PlayerPage), file);
+                //Frame.Navigate(typeof(PlayerPage), file);
+                MediaFiles.Add(new MediaFile(file.Name, file));
+            }
+        }
 
+        private async void MediaGridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var item = (MediaFile)e.ClickedItem;
+            if (item.Name == "OpenFile")
+            {
+                var filePicker = new FileOpenPicker();
+
+                filePicker.FileTypeFilter.Add(".wmv");
+                filePicker.FileTypeFilter.Add(".mp4");
+                filePicker.FileTypeFilter.Add(".mkv");
+                filePicker.FileTypeFilter.Add(".avi");
+
+                filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
+
+                StorageFile file = await filePicker.PickSingleFileAsync();
+
+                if (file != null)
+                {
+                    //Frame.Navigate(typeof(PlayerPage), file);
+                    MediaFiles.Add(new MediaFile(file.Name, file));
+                }
+            }
+            else if (item.Name == "OpenFolder")
+            {
+                var folderPicker = new FolderPicker();
+                folderPicker.SuggestedStartLocation = PickerLocationId.Desktop;
+                folderPicker.FileTypeFilter.Add("*");
+
+                StorageFolder folder = await folderPicker.PickSingleFolderAsync();
+                IReadOnlyList<StorageFile> filelist = await folder.GetFilesAsync();
+                foreach (StorageFile file in filelist)
+                {
+                    MediaFiles.Add(new MediaFile(file.Name, file));
+                }
+            }
+            else
+            {
+                Frame.Navigate(typeof(PlayerPage), item);
+            }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var folderPicker = new FolderPicker();
+            folderPicker.SuggestedStartLocation = PickerLocationId.Desktop;
+            folderPicker.FileTypeFilter.Add("*");
+
+            StorageFolder folder = await folderPicker.PickSingleFolderAsync();
+            IReadOnlyList<StorageFile> filelist = await folder.GetFilesAsync();
+            foreach (StorageFile file in filelist)
+            {
+                MediaFiles.Add(new MediaFile(file.Name, file));
             }
         }
     }

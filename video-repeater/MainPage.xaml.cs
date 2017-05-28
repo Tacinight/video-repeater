@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
-namespace video_repeater
+namespace VideoRepeater
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
@@ -30,18 +30,15 @@ namespace video_repeater
             mainPageFrame.Navigate(typeof(MediaPage));
         }
 
-        private async void PlayBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void IconListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
 
         private void HamburgerBtn_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
+        }
+
+        private void MenuItemListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

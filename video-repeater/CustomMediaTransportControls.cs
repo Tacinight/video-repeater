@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
-using video_repeater;
+using VideoRepeater;
 
-namespace video_repeater
+namespace VideoRepeater
 {
     public sealed class CustomMediaTransportControls : MediaTransportControls 
     {
