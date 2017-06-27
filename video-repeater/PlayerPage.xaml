@@ -8,11 +8,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel>
+    <Grid>
         <MediaElement Name="myMediaElement">
             <MediaElement.TransportControls>
-                <local:CustomMediaTransportControls />
+                <local:CustomMediaTransportControls 
+                    MarkEntry="MarkEntryButton_Click"
+                    MarkExit="MarkExitButton_Click"
+                    IsPlaybackRateButtonVisible="True"
+                    IsPlaybackRateEnabled="True"
+                    IsCompact="True"/>
             </MediaElement.TransportControls>
         </MediaElement>
-    </StackPanel>
+    </Grid>
 </Page>

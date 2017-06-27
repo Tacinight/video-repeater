@@ -2,7 +2,7 @@
     x:Class="VideoRepeater.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:VideoRepeater"
+    xmlns:data="using:VideoRepeater.Model"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -12,9 +12,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            
-        </StackPanel>
 
         <SplitView Name="mySplitView" 
                    DisplayMode="CompactInline" 
@@ -24,67 +21,85 @@
                    HorizontalAlignment="Left"
                    IsPaneOpen="True">
             <SplitView.Pane>
-                <ListView Name="MenuItemListView"
-                          ItemClick="MenuItemListView_ItemClick" >
-                    <ListViewItem Name="ListBoxItem"
+                <StackPanel>
+                    <ListView Name="MenuItemListView"
+                          ItemClick="MenuItemListView_ItemClick">
+                        <ListViewItem Name="ListBoxItem"
                                  Padding="0">
-                        <Button Name="HamburgerBtn" 
+                            <Button Name="HamburgerBtn" 
                                 FontFamily="Segoe MDL2 Assets"  
                                 Content="&#xE700;" 
                                 FontSize="24"
                                 Click="HamburgerBtn_Click"/>
-                    </ListViewItem>
+                        </ListViewItem>
 
-
-                    <ListViewItem Name="ListBoxItem1">
-                        <RelativePanel>
-                            <TextBlock Name="mediaLibrary"
+                        <ListViewItem Name="ListBoxItem1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Name="MediaLibrary"
                                        FontFamily="Segoe MDL2 Assets"  
                                        Text="&#xE703;" 
                                        FontSize="24"
                                        Margin="-5,0,0,0"/>
-                            <TextBlock Margin="20, 0, 0, 0"  
+                                <TextBlock Margin="20, 0, 0, 0"  
                                        Text="媒体库" 
                                        FontSize="16"
-                                       RelativePanel.RightOf="mediaLibrary"
-                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                        </RelativePanel>
-                    </ListViewItem>
-                    <ListViewItem >
-                        <RelativePanel>
-                            <TextBlock Name="recordInfo"
+                                       VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        
+                        <ListViewItem >
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="RecordInfo"
                                        FontFamily="Segoe MDL2 Assets"  
                                        Text="&#xE707;" 
                                        FontSize="24"
                                        Margin="-5,0,0,0"/>
-                            <TextBlock Margin="20, 0, 0, 0"
+                                <TextBlock Margin="20, 0, 0, 0"
                                        Text="记录信息" 
                                        FontSize="16"
-                                       RelativePanel.RightOf="recordInfo"
-                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                        </RelativePanel>
-                    </ListViewItem>
-                    <ListBoxItem >
-                        <RelativePanel>
-                            <TextBlock Name="CloudInfo"
+                                       VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Name="CloudInfo"
                                        FontFamily="Segoe MDL2 Assets"  
-                                       Text="&#xE707;" 
+                                       Text="&#xE709;" 
                                        FontSize="24"
                                        Margin="-5,0,0,0"/>
-                            <TextBlock Margin="20, 0, 0, 0"
-                                       Text="记录信息" 
+                                <TextBlock Margin="20, 0, 0, 0"
+                                       Text="Remote Cloud" 
                                        FontSize="16"
-                                       RelativePanel.RightOf="CloudInfo"
-                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                        </RelativePanel>
-                    </ListBoxItem>
-                </ListView>
+                                       VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                    <Image Source="/Assets/line.png" Width="180" Height="20" />
+                    <ListView Name="MediaSliceListView"
+                              ItemsSource="{x:Bind MediaSlices}"
+                              IsItemClickEnabled="True"
+                              ItemClick="MediaSliceListView_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="data:MediaSlice">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Name="CloudInfo"
+                                       FontFamily="Segoe MDL2 Assets"  
+                                       Text="&#xED59;" 
+                                       FontSize="24"
+                                       Margin="-5,0,0,0"/>
+                                    <TextBlock Margin="20, 0, 0, 0"
+                                       Text="{x:Bind Entry.TotalSeconds}" 
+                                       FontSize="16"
+                                       VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <Frame Name="mainPageFrame">
-                    
-                </Frame>
-                
+                <Frame Name="subFrame"/>
             </SplitView.Content>
         </SplitView>
         

@@ -10,7 +10,9 @@ namespace VideoRepeater
 {
     public sealed class CustomMediaTransportControls : MediaTransportControls 
     {
-        public event EventHandler<EventArgs> Liked;
+        public event EventHandler<EventArgs> MarkEntry;
+        public event EventHandler<EventArgs> MarkExit;
+
         public CustomMediaTransportControls()
         {
             this.DefaultStyleKey = typeof(CustomMediaTransportControls);
@@ -18,14 +20,21 @@ namespace VideoRepeater
 
         protected override void OnApplyTemplate()
         {
-            Button likeButton = GetTemplateChild("LikeButton") as Button;
-            likeButton.Click += LikeButton_Click;
+            Button MarkEntryButton = GetTemplateChild("MarkEntryButton") as Button;
+            MarkEntryButton.Click += MarkEntryButton_Click;
+            Button MarkExitButton = GetTemplateChild("MarkExitButton") as Button;
+            MarkExitButton.Click += MarkExitButton_Click;
             base.OnApplyTemplate();
         }
 
-        private void LikeButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void MarkEntryButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Liked?.Invoke(this, EventArgs.Empty);
+            MarkEntry?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void MarkExitButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            MarkExit?.Invoke(this, EventArgs.Empty);
         }
     }
 }

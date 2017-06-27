@@ -9,30 +9,22 @@
     xmlns:data="using:VideoRepeater.Model"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal">
+    <Grid>
         <GridView Name="MediaGridView"
                   SelectionMode="None"
                   IsItemClickEnabled="True"
                   ItemsSource="{x:Bind MediaFiles}"
-                  ItemClick="MediaGridView_ItemClick"
-                  Width="600"
-                  
-                  >
+                  ItemClick="MediaGridView_ItemClick">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="data:MediaFile">
                     <StackPanel>
-                        <Image Source="/Assets/pic.png" Width="160" Height="160"/>
-                        <Button Content="{x:Bind Name}"/>
+                        <Image Source="{x:Bind ImageFile}" Width="160" Height="160"/>
+                        <TextBlock Text="{x:Bind Name}"/>
                     </StackPanel>
-                    
+
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <Button Content="Open" Click="openBtn_Click"  FontSize="26"/>
-        <Button Content="OpenFolder" 
-                FontSize="26"
-                Click="Button_Click"
-                Margin="20,0,0,0"/>
-    </StackPanel>
+    </Grid>
 
 </Page>

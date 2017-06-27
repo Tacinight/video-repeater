@@ -682,11 +682,22 @@
                                                     <FontIcon Glyph="&#xED1F;"/>
                                                 </AppBarButton.Icon>
                                             </AppBarButton>
-                                            <AppBarButton x:Name='LikeButton'
-                                                          Icon="Like"
-                                                          Label="Like"
-                                                          VerticalAlignment="Center"
-                                                          Style='{StaticResource AppBarButtonStyle}'/>
+                                            <AppBarButton x:Name='MarkEntryButton'
+                                                Label="MarkEntry"
+                                                VerticalAlignment="Center"
+                                                Style='{StaticResource AppBarButtonStyle}'>
+                                                <AppBarButton.Icon>
+                                                    <FontIcon Glyph="&#xEDE1;"/>
+                                                </AppBarButton.Icon>
+                                            </AppBarButton>
+                                            <AppBarButton x:Name='MarkExitButton'
+                                                 Label="MarkEntry"
+                                                 VerticalAlignment="Center"
+                                                 Style='{StaticResource AppBarButtonStyle}'>
+                                                <AppBarButton.Icon>
+                                                    <FontIcon Glyph="&#xEDE2;"/>
+                                                </AppBarButton.Icon>
+                                            </AppBarButton>
                                             <AppBarSeparator x:Name='LeftSeparator'
                                                 Height='0'
                                                 Width ='0'
@@ -757,6 +768,16 @@
                                                 Height='0'
                                                 Width ='0'
                                                 Margin='0,0' />
+                                            
+                                            <AppBarButton x:Name='FullWindowButton'
+                                                Style='{StaticResource AppBarButtonStyle}'
+                                                MediaTransportControlsHelper.DropoutOrder='17'>
+                                                <AppBarButton.Icon>
+                                                    <SymbolIcon x:Name='FullWindowSymbol' Symbol='FullScreen' />
+                                                </AppBarButton.Icon>
+                                            </AppBarButton>
+                                        </CommandBar.PrimaryCommands>
+                                        <CommandBar.SecondaryCommands>
                                             <AppBarButton x:Name='ZoomButton'
                                                 Style='{StaticResource AppBarButtonStyle}'
                                                 MediaTransportControlsHelper.DropoutOrder='9'>
@@ -771,14 +792,7 @@
                                                     <FontIcon Glyph="&#xEC15;"/>
                                                 </AppBarButton.Icon>
                                             </AppBarButton>
-                                            <AppBarButton x:Name='FullWindowButton'
-                                                Style='{StaticResource AppBarButtonStyle}'
-                                                MediaTransportControlsHelper.DropoutOrder='17'>
-                                                <AppBarButton.Icon>
-                                                    <SymbolIcon x:Name='FullWindowSymbol' Symbol='FullScreen' />
-                                                </AppBarButton.Icon>
-                                            </AppBarButton>
-                                        </CommandBar.PrimaryCommands>
+                                        </CommandBar.SecondaryCommands>
                                     </CommandBar>
                                 </Border>
                             </Grid>
